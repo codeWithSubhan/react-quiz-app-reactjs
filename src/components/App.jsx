@@ -92,7 +92,7 @@ export default function App() {
   const NumQuestions = question.length;
   const maxPossiblePoints = question.reduce((acc, el) => acc + el.points, 0);
   useEffect(() => {
-    fetch('http://localhost:9000/questions')
+    fetch('https://api-iqsj.onrender.com/questions')
       .then((res) => res.json())
       .then((data) => dispatch({ type: 'dataReceived', payload: data }))
       .catch((err) => dispatch({ type: 'dataFailed' }));
